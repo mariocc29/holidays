@@ -40,5 +40,19 @@ module Holidays
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+
+    # Disable the generation of template engine files, as it is not needed for this project.
+    # Use RSpec as the preferred test framework, with fixtures disabled.
+    # Skip the generation of stylesheets, JavaScript files, and helper files.
+    # Enable API-only mode for generating only the necessary files for building an API.
+    config.generators do |g|
+      g.template_engine nil
+      g.test_framework :rspec, fixture: false
+      g.stylesheets false
+      g.javascripts false
+      g.helper false
+      g.api true
+    end
+
   end
 end
