@@ -14,15 +14,13 @@ module V1
              ApplicationException::BadRequestException.to_h
            ]
       params do
-        requires :code, type: String, values: %w[ca co], desc: 'The code for which you want holiday information'
+        requires :code, type: String, values: Rules.codes, desc: 'The code for which you want holiday information'
         optional :locale, type: String, values: %w[en fr_CA], desc: 'The desired locale for holiday information.'
         optional :year, type: Integer, desc: 'The year for which you want holiday information.'
       end
       route_param :code do
         get do
-          data = [
-            { date: '2024-01-01', label: 'Holiday', note: 'xxxx' }
-          ]
+          data = Core::Handler.get params[:code], params[:locale], params[:year]
           present data, with: Entities::HolidayEntity
         end
       end

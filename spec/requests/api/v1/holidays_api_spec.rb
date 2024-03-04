@@ -32,6 +32,12 @@ RSpec.describe V1::HolidaysApi, type: :request do
 
       it_behaves_like 'valid parameters'
 
+      context 'whit code "ca_qc"' do
+        let(:code) { 'ca_qc' }
+
+        it_behaves_like 'valid parameters'
+      end
+
       context 'whit code "co"' do
         let(:code) { 'co' }
 

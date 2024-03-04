@@ -1,0 +1,17 @@
+ca:
+  default:
+    canada_day:
+    christmas_eve:
+    christmas_next_day:
+    christmas:
+    easter_monday:
+    good_friday:
+    labor_day:
+    new_year_next_day:
+    new_year:
+    new_years_eve:
+    remembrance_day:
+    thanksgiving:
+  ca_qc: 
+    journee_des_patriotes:
+    saint_jean_baptiste:
