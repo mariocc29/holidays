@@ -14,8 +14,8 @@ RSpec.describe 'Routes', type: :request do
       expect(last_response.body).to include_json(
         {
           error: {
-            code: 'ERR001',
-            message: 'You don\'t have the necessary permissions to access this resource.'
+            status: HttpStatus::FORBIDDEN,
+            message: '[ERR001] - You don\'t have the necessary permissions to access this resource.'
           }
         }
       )
@@ -29,8 +29,8 @@ RSpec.describe 'Routes', type: :request do
       expect(last_response.body).to include_json(
         {
           error: {
-            code: 'ERR002',
-            message: 'No route matches [GET] "/undefined_route"'
+            status: HttpStatus::NOT_FOUND,
+            message: '[ERR002] - No route matches [GET] "/undefined_route"'
           }
         }
       )

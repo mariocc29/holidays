@@ -8,6 +8,7 @@ RSpec.describe Api, type: :request do
   include Rack::Test::Methods
 
   describe 'GET /api/api' do
+
     it 'returns success response', :aggregate_failures do
       get '/api/health'
       expect(last_response.status).to eq(HttpStatus::OK)

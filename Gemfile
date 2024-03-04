@@ -39,6 +39,7 @@ gem "bootsnap", require: false
 gem 'grape' # REST-like API framework for Ruby
 gem 'grape-entity' # Entity serialization for Grape APIs
 gem 'grape-swagger' # Adds swagger compliant documentation to your Grape API
+gem 'grape-swagger-entity' # Swagger documentation for Grape entities
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -48,6 +49,7 @@ group :development, :test do
   gem 'rspec-rails' # Behavior-driven development for Ruby on Rails applications
   gem 'rack-test' # Add the 'rack/test' gem for testing Rack applications with a simple API.
   gem 'rspec-json_expectations' # Integrate 'rspec/json_expectations' gem for additional JSON-related expectations in RSpec.
+  gem 'byebug'
 end
 
 group :development do

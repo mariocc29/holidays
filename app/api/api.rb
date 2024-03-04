@@ -2,6 +2,8 @@
 
 # This class represents the main API combining multiple versions.
 class Api < Grape::API
+  include ExceptionHandlers
+
   format :json
 
   mount V1::HolidaysApi
