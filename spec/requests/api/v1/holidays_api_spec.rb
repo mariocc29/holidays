@@ -49,7 +49,7 @@ RSpec.describe V1::HolidaysApi, type: :request do
 
           expected_error_response = {
             error: {
-              status: HttpStatus::BAD_REQUEST,
+              code: HttpStatus::BAD_REQUEST,
               message: '[ERR003] - code does not have a valid value'
             }
           }
@@ -67,7 +67,7 @@ RSpec.describe V1::HolidaysApi, type: :request do
 
           expected_error_response = {
             error: {
-              status: HttpStatus::BAD_REQUEST,
+              code: HttpStatus::BAD_REQUEST,
               message: '[ERR003] - locale does not have a valid value'
             }
           }

@@ -17,7 +17,7 @@ module ApplicationException
     end
 
     def to_h
-      { status: @status, message: "[#{@code}] - #{@message}" }
+      { code: status, message: "[#{@code}] - #{@message}" }
     end
   end
 
@@ -48,7 +48,7 @@ module ApplicationException
     end
 
     def self.to_h
-      { status: HttpStatus::BAD_REQUEST, message: "[#{CODE}] - Bad Request message" }
+      { code: HttpStatus::BAD_REQUEST, message: "[#{CODE}] - Bad Request message" }
     end
   end
 
