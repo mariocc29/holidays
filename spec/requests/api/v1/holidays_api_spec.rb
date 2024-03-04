@@ -9,7 +9,7 @@ RSpec.describe V1::HolidaysApi, type: :request do
   describe 'GET /api/v1/holidays_api' do
     it 'returns success response' do
       get '/api/v1/holidays/'
-      expect(last_response.status).to eq(200)
+      expect(last_response.status).to eq(HttpStatus::OK)
     end
   end
 end
