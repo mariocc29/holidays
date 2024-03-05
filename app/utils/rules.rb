@@ -6,9 +6,11 @@ module Rules
   def self.codes
     directory_path = Rails.root.join('config', 'rules')
 
-    regions_data = Dir.glob("#{directory_path}/*.yml").flat_map do |file|
+    regions = Dir.glob("#{directory_path}/*.yml").flat_map do |file|
       code = File.basename(file, '.yml')
       content = YAML.safe_load(File.read(file))
+
+      next if content[code].nil?
 
       content[code].keys.tap do |list|
         index_of_default = list.index('default')
@@ -16,6 +18,6 @@ module Rules
       end
     end
 
-    regions_data.flatten.sort
+    regions.flatten.compact.sort
   end
 end

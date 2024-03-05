@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
-require 'rack/test'
 require 'rspec/json_expectations'
 
 RSpec.describe Core::Handler, type: :service do
