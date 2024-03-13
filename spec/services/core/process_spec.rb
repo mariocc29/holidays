@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
-require 'rspec/json_expectations'
 
 RSpec.describe Core::Process do
   describe '.build' do
@@ -34,7 +33,7 @@ RSpec.describe Core::Process do
       Core::Process.const_set(:SERVICES_BY_COUNTRY, original_services_by_country)
     end
 
-    it 'returns a sorted list of holidays', :aggregate_failures do
+    it 'returns a sorted list of holidays' do
       response = subject.build
       expect(response).to contain_exactly(
         { date: holiday_b[:date], label: holiday_b[:label] },
@@ -66,6 +65,12 @@ RSpec.describe Core::Process do
       subject.build
       expect(I18n).to have_received(:t).with('core.holidays.holiday_a').once
       expect(I18n).to have_received(:t).with('core.holidays.holiday_b').once
+    end
+
+    it 'returns an empty list if the holiday does not exist' do
+      allow(rule).to receive(:settings).and_return({ unknown_holiday: nil })
+      response = subject.build
+      expect(response.size).to eq(0)
     end
   end
 end

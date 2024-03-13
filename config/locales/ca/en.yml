@@ -1,0 +1,20 @@
+en:
+  core:
+    holidays:
+      canada_day: Canada Day
+      christmas_eve: Christmas Eve
+      christmas_next_day: Boxing Day
+      christmas: Christmas Day
+      civic_holiday: Civic Holiday
+      easter_monday: Easter Monday
+      family_day_bc: Family Day (BC)
+      family_day: Family Day
+      good_friday: Good Friday
+      journee_des_patriotes: National Patriot's Day
+      labor_day: Labour Day
+      new_year_next_day: Day after New Year's Day
+      new_year: New Year's Day
+      new_years_eve: New Year's Eve
+      remembrance_day: Remembrance Day
+      saint_jean_baptiste: National Day of Quebec
+      thanksgiving: Thanksgiving

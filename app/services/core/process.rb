@@ -3,7 +3,9 @@
 module Core
   # The Process class defines methods for building and processing data.
   class Process
-    SERVICES_BY_COUNTRY = {}.freeze
+    SERVICES_BY_COUNTRY = {
+      ca: Core::Components::CA::SERVICES
+    }.freeze
 
     def initialize(rule, locale, year)
       @rule = rule

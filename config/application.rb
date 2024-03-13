@@ -54,5 +54,8 @@ module Holidays
       g.api true
     end
 
+    Dir[Rails.root.join('app/services/core/**/*.rb')].each { |file| load file }
+
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
   end
 end

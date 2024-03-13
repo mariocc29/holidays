@@ -1,0 +1,20 @@
+fr_CA:
+  core:
+    holidays:
+      canada_day: Fête du Canada
+      christmas_eve: Veille de Noël
+      christmas_next_day: Lendemain de Noël
+      christmas: Fête de Noël
+      civic_holiday: Congé civique
+      easter_monday: Lundi de Pâques
+      family_day_bc: Jour de la Famille (BC)
+      family_day: Jour de la Famille
+      good_friday: Vendredi saint
+      journee_des_patriotes: Journée nationale des Patriotes
+      labor_day: Fête du Travail
+      new_year_next_day: Lendemain du jour de l'An
+      new_year: Jour de l'An
+      new_years_eve: Veille du jour de l'An
+      remembrance_day: Jour du souvenir
+      saint_jean_baptiste: Fête nationale du Québec
+      thanksgiving: Action de grâces
