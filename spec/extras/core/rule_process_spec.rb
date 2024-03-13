@@ -3,7 +3,7 @@
 require 'rails_helper'
 require 'rspec/json_expectations'
 
-RSpec.describe Core::RuleProcess, type: :service do
+RSpec.describe Core::RuleProcess do
   describe '.new' do
     subject { described_class.new(code) }
 

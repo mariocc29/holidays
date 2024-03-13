@@ -3,7 +3,7 @@
 require 'rails_helper'
 require 'rspec/json_expectations'
 
-RSpec.describe Core::Handler, type: :service do
+RSpec.describe Core::Handler do
   describe '.get' do
     let(:code) { 'some_code' }
     let(:year) { Date.today.year }
