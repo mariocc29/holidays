@@ -11,12 +11,14 @@ module V1
            is_array: true,
            success: Entities::HolidayEntity,
            failure: [
-             ApplicationException::BadRequestException.to_h
+             ApplicationException::BadRequestException.to_h,
+             HolidaysException::UnprocessableEntityException.to_h,
+             HolidaysException::InvalidYearException.to_h
            ]
       params do
         requires :code, type: String, values: Rules.codes, desc: 'The code for which you want holiday information'
         optional :locale, type: String, values: %w[en fr_CA], desc: 'The desired locale for holiday information.'
-        optional :year, type: Integer, desc: 'The year for which you want holiday information.'
+        optional :year, type: Integer, desc: 'The year for which you want holiday information. Year must be 1583 or later.'
       end
       route_param :code do
         get do

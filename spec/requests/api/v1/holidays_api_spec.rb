@@ -81,6 +81,24 @@ RSpec.describe V1::HolidaysApi, type: :request do
           expect(last_response.body).to include_json(expected_error_response)
         end
       end
+
+      context 'when a invalid year has been provided' do
+        let(:params) { { year: 1500 } }
+
+        it 'returns a bad request error', :aggregate_failures do
+          response = subject
+          expect(response.status).to eq(HttpStatus::BAD_REQUEST)
+
+          expected_error_response = {
+            error: {
+              code: HttpStatus::BAD_REQUEST,
+              message: '[ERR005] - The year does not have a valid value. Please make sure the year is 1583 or later.'
+            }
+          }
+
+          expect(last_response.body).to include_json(expected_error_response)
+        end
+      end
     end
   end
 end

@@ -47,5 +47,14 @@ RSpec.describe Core::RuleProcess do
         )
       end
     end
+
+    context 'when the content file contains invalid data' do
+      let(:content_file) { "country:\n  default:\n  country_region:\n    holiday_b:\n" }
+      let(:code) { 'country' }
+
+      it 'raises UnprocessableEntityException when accessing settings with invalid data' do
+        expect{ subject.settings }.to raise_error(HolidaysException::UnprocessableEntityException)
+      end
+    end
   end
 end
